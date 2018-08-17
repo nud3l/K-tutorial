@@ -27,4 +27,12 @@ module IMP // semantics
   imports IMP-SYNTAX
   imports DOMAINS
   syntax KResult ::= Int | Bool // tells K which are valid results
+
+  configuration <T color="yellow"> 
+    <k color="green"> $PGM:Pgm </k> // built-in variable where parsed prgram is placed
+    <state color="red"> .Map </state>
+  </T>
+
+  rule <k> X:Id => I ...</k> <state>... X |-> I ...</state> //variables need to be defined before called
+
 endmodule
